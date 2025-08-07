@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SubHelp - Portal de Pedidos</title>
+  <script defer src="script.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-900">
+  <div class="max-w-4xl mx-auto p-6">
+    <h1 class="text-2xl font-bold mb-4 text-red-600">SubHelp - Submissão de Pedidos</h1>
+    <form id="ticketForm" class="space-y-4 bg-white p-4 rounded shadow">
+      <input type="text" id="tipo" placeholder="Tipo de Pedido (Helpdesk / Reporting)" class="w-full border p-2 rounded" required />
+      <textarea id="descricao" placeholder="Descreve o teu pedido" class="w-full border p-2 rounded" required></textarea>
+      <input type="date" id="dataEntrega" class="w-full border p-2 rounded" />
+      <button type="submit" class="bg-red-600 text-white px-4 py-2 rounded">Submeter</button>
+    </form>
+    <h2 class="text-xl font-semibold mt-6">Pedidos Submetidos</h2>
+    <table id="tabelaPedidos" class="min-w-full table-auto bg-white mt-2 rounded shadow overflow-hidden">
+      <thead class="bg-red-100">
+        <tr>
+          <th class="px-4 py-2 text-left">ID</th>
+          <th class="px-4 py-2 text-left">Tipo</th>
+          <th class="px-4 py-2 text-left">Descrição</th>
+          <th class="px-4 py-2 text-left">Estado</th>
+          <th class="px-4 py-2 text-left">Entrega</th>
+        </tr>
+      </thead>
+      <tbody id="corpoTabela" class="divide-y divide-gray-200">
+      </tbody>
+    </table>
+    <button onclick="exportarCSV()" class="mt-4 bg-gray-700 text-white px-4 py-2 rounded">Exportar para CSV</button>
+  </div>
+</body>
+</html>
